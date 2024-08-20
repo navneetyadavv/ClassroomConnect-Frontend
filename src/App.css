@@ -1,0 +1,40 @@
+@keyframes subtle-move {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); 
+    }
+  }
+  
+  .subtle-move {
+    animation: subtle-move 2s infinite; 
+  }
+
+.rotated-view {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .rotated-view {
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 100vh; 
+    height: 100vw; 
+  }
+}
+
+.close-button {
+  font-size: 32px; 
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  cursor: pointer;
+}
