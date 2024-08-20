@@ -24,7 +24,7 @@ const Login = () => {
   
 
       if (role === "Principal") {
-        response = await axios.post('/auth/principal-login',
+        response = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/auth/principal-login`,
           { email, password },
           {
             headers: {
@@ -34,7 +34,7 @@ const Login = () => {
         );
       } else {
         response = await axios.post(
-          '/auth/user-login',
+          `${import.meta.env.VITE_SERVER_DOMAIN}/auth/user-login`,
           { email, password },
           {
             headers: {

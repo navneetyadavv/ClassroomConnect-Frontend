@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchClassroomsApi = async () => {
-  const { data } = await axios.get("/classroom/get-classrooms");
+  const { data } = await axios.get(`${import.meta.env.VITE_SERVER_DOMAIN}/classroom/get-classrooms`);
   return data;
 };
 
@@ -17,11 +17,11 @@ export const addClassroomApi = async (
   return response.data;
 };
 export const deleteClassroomApi = async (id, headers) => {
-  await axios.delete(`/classroom/delete-classroom/${id}`, headers);
+  await axios.delete(`${import.meta.env.VITE_SERVER_DOMAIN}/classroom/delete-classroom/${id}`, headers);
 };
 
 export const removeTeacherFromClassroomApi = async (classroomId, headers) => {
-  await axios.patch("/classroom/remove-teacher", { classroomId, headers });
+  await axios.patch(`${import.meta.env.VITE_SERVER_DOMAIN}/classroom/remove-teacher`, { classroomId, headers });
 };
 
 export const assignTeacherToClassroomApi = async (
@@ -29,7 +29,7 @@ export const assignTeacherToClassroomApi = async (
   headers
 ) => {
   await axios.post(
-    "/classroom/assign-teacher",
+    `${import.meta.env.VITE_SERVER_DOMAIN}/classroom/assign-teacher`,
     { classroomId, teacherId },
     headers
   );
@@ -40,7 +40,7 @@ export const updateClassroomStudentsApi = async (
   headers
 ) => {
   const response = await axios.put(
-    "/classroom/update-students-inclassroom",
+    `${import.meta.env.VITE_SERVER_DOMAIN}/classroom/update-students-inclassroom`,
     { classroomId, newStudents },
     headers
   );

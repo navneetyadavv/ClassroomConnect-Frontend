@@ -5,7 +5,7 @@ export const createUserApi = async (
   headers
 ) => {
   const response = await axios.post(
-    '/user/create-user',
+    'https://classroom-connect.vercel.app/user/create-user',
     { name, email, password, role },
     headers
   );
@@ -14,14 +14,14 @@ export const createUserApi = async (
 
 export const fetchUsersApi = async () => {
   const response = await axios.get(
-   '/user/get-users'
+   'https://classroom-connect.vercel.app/user/get-users'
   );
   return response.data;
 };
 
 export const deleteUserApi = async ({ id }, headers) => {
   const response = await axios.delete(
-    `/user/delete-user/${id}`,
+    `https://classroom-connect.vercel.app/user/delete-user/${id}`,
     headers
   );
   return response.data;
@@ -29,7 +29,7 @@ export const deleteUserApi = async ({ id }, headers) => {
 
 export const updateUserApi = async (id, updatedData) => {
   const response = await axios.put(
-    `/user/update-user/${id}`,
+    `https://classroom-connect.vercel.app/user/update-user/${id}`,
     updatedData
   );
   return response.data;
@@ -37,14 +37,14 @@ export const updateUserApi = async (id, updatedData) => {
 
 export const fetchAvailableStudentsApi = async () => {
   const response = await axios.get(
-    '/user/available-students'
+    'https://classroom-connect.vercel.app/user/available-students'
   );
   return response.data;
 };
 
 export const fetchAvailableTeachersApi = async () => {
   const response = await axios.get(
-    '/user/available-teachers'
+    'https://classroom-connect.vercel.app/user/available-teachers'
   );
   return response.data;
 };
