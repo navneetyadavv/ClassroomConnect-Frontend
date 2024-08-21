@@ -120,11 +120,10 @@ const TimetableManager = ({ classroomId = [], role, onClose }) => {
         };
       }),
     }));
-
     try {
       const url = isUpdate
-        ? 'http://localhost:5000/timetable/update-timetable'
-        : 'http://localhost:5000/timetable/create-timetable';
+        ? `${import.meta.env.VITE_SERVER_DOMAIN}/timetable/update-timetable`
+        : `${import.meta.env.VITE_SERVER_DOMAIN}/create-timetable`;
 
       const method = isUpdate ? "patch" : "post";
 
@@ -148,7 +147,7 @@ const TimetableManager = ({ classroomId = [], role, onClose }) => {
     );
 
   return (
-    <div className="sm:p-6 lg:p-8 5 lg:max-w-4xl mx-auto">
+    <div className="sm:p-6 lg:p-8 5 inherit lg:max-w-4xl mx-auto">
       <table className="table-auto border-collapse border border-gray-300 w-full">
         <thead>
           <tr className="bg-gray-100">

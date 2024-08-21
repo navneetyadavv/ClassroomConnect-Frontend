@@ -199,8 +199,8 @@ const UserDashboard = ({ setIsAuthenticated, setUserRole }) => {
       </div>
       <div className="transition-opacity duration-500 p-2">
         {view === "timetable" && (
-          <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center overflow-auto">
-            <div className="rotated-view max-w-screen-lg">
+          <div className=" inset-0 bg-gray-600 bg-opacity-50 overflow-hidden relative pb-10">
+            <div className=" fixed rotated-view flex-row justify-center items-center ">
               <button
                 onClick={() => setView("")}
                 className="close-button"
